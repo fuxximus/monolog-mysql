@@ -32,7 +32,7 @@ of a logger please refer to the [monolog documentation](https://github.com/Selda
 use MySQLHandler\MySQLHandler;
 
 //Create MysqlHandler
-$mySQLHandler = new MySQLHandler($pdo, "log", array('username', 'userid'), \Monolog\Logger::DEBUG);
+$mySQLHandler = new MySQLHandler($pdo, "log", array('username' => array('type' => 'varchar', 'length' => '100'), 'userid' => array('type' => 'int')), \Monolog\Logger::DEBUG);
 
 //Create logger
 $logger = new \Monolog\Logger($context);
